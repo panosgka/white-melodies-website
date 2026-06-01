@@ -1510,6 +1510,8 @@ input:focus, textarea:focus, select:focus {
   h1 { font-size: clamp(36px, 11vw, 48px); line-height: 1.04; }
   h2 { font-size: clamp(30px, 9vw, 40px); }
   h3 { font-size: 20px; }
+  .eyebrow { font-size: 13px; }
+  .btn { font-size: 14px; }
   .nav-wrap { width: min(100% - 32px, 1240px); height: 76px; }
   .container, .hero-content, .mobile-nav { width: min(100% - 32px, 1240px); }
   .brand-mark { width: 44px; height: 44px; }
@@ -1521,6 +1523,11 @@ input:focus, textarea:focus, select:focus {
   }
   .hero-title-line { white-space: normal; }
   .hero-actions .btn, .section-actions .btn { width: 100%; }
+  .footer a {
+    min-height: 44px;
+    padding: 11px 0;
+    margin: 0;
+  }
   .scroll-cue {
     bottom: 22px;
     width: 28px;

@@ -148,14 +148,14 @@ h3 {
   width: calc(100% - 48px);
   max-width: none;
   margin: 0 auto;
-  height: 92px;
+  height: 104px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
 }
 .site-header.is-scrolled .nav-wrap,
-.site-header.is-open .nav-wrap { height: 80px; }
+.site-header.is-open .nav-wrap { height: 88px; }
 .brand {
   display: flex;
   align-items: center;
@@ -179,7 +179,7 @@ h3 {
 .brand span:last-child { font-size: 0.98rem; line-height: 1.22; }
 .brand-logo {
   display: block;
-  height: 52px;
+  height: 78px;
   width: auto;
   transition: opacity 220ms ease;
 }
@@ -188,6 +188,8 @@ h3 {
 .site-header.is-open .brand-logo.is-light { display: none; }
 .site-header.is-scrolled .brand-logo.is-dark,
 .site-header.is-open .brand-logo.is-dark { display: block; }
+.site-header.is-scrolled .brand-logo,
+.site-header.is-open .brand-logo { height: 66px; }
 .desktop-nav {
   display: flex;
   align-items: center;

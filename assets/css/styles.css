@@ -12,7 +12,7 @@
   --font-main: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --sans: var(--font-main);
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
-  --motion-medium: 800ms;
+  --motion-medium: 400ms;
   --motion-slow: 1000ms;
 }
 
@@ -1411,8 +1411,8 @@ input:focus, textarea:focus, select:focus {
 }
 .motion-ready .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  filter: blur(8px);
+  transform: translateY(16px);
+  filter: blur(4px);
 }
 .reveal.is-visible {
   opacity: 1;

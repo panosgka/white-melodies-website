@@ -983,7 +983,6 @@ p.lead {
 .package-card.featured {
   border-color: var(--soft-gold);
   box-shadow: 0 30px 90px rgba(23,22,20,0.18);
-  transform: translateY(-8px);
 }
 .package-card:hover {
   transform: translateY(-5px);
@@ -991,7 +990,7 @@ p.lead {
   border-color: rgba(185,151,91,0.38);
 }
 .package-card.featured:hover {
-  transform: translateY(-12px);
+  transform: translateY(-5px);
   box-shadow: 0 34px 96px rgba(185,151,91,0.2), 0 24px 72px rgba(23,22,20,0.16);
 }
 .package-card h3 { margin-bottom: 12px; }
@@ -1003,8 +1002,10 @@ p.lead {
 }
 .package-card p { min-height: 3.2em; }
 .badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
   display: inline-flex;
-  margin-bottom: 16px;
   padding: 6px 10px;
   color: var(--charcoal);
   background: var(--soft-gold);
@@ -1428,13 +1429,13 @@ input:focus, textarea:focus, select:focus {
   transform: translateY(calc(var(--panel-y, 0px) - 4px));
 }
 .package-card.featured.reveal.is-visible {
-  transform: translateY(-8px);
+  transform: translateY(0);
 }
 .package-card.reveal.is-visible:hover {
   transform: translateY(-5px);
 }
 .package-card.featured.reveal.is-visible:hover {
-  transform: translateY(-12px);
+  transform: translateY(-5px);
 }
 .parallax-soft {
   will-change: transform;

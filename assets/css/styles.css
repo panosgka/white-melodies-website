@@ -161,7 +161,8 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 96px;
+  flex: 0 0 214px;
+  width: 214px;
   height: 58px;
   gap: 14px;
   letter-spacing: 0.08em;
@@ -186,14 +187,16 @@ h3 {
   inset: 50% auto auto 0;
   transform: translateY(-50%);
   display: block;
-  height: 54px;
+  height: 50px;
   width: auto;
   transition: filter 520ms ease, opacity 520ms ease;
 }
-.brand-logo.is-dark { display: none; }
+.brand-logo.is-dark { opacity: 0; }
 .brand-logo.is-light { opacity: 1; }
 .site-header.is-scrolled .brand-logo.is-light,
-.site-header.is-open .brand-logo.is-light { filter: brightness(0) saturate(100%); }
+.site-header.is-open .brand-logo.is-light { opacity: 0; }
+.site-header.is-scrolled .brand-logo.is-dark,
+.site-header.is-open .brand-logo.is-dark { opacity: 1; }
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -1354,7 +1357,7 @@ input:focus, textarea:focus, select:focus {
 }
 .footer-brand img {
   display: block;
-  height: 72px;
+  height: 68px;
   width: auto;
 }
 .footer a {
@@ -1478,8 +1481,26 @@ input:focus, textarea:focus, select:focus {
 
 @media (max-width: 980px) {
   .desktop-nav, .nav-actions .btn, .nav-actions .social-link { display: none; }
+  .nav-socials { display: none; }
   .menu-toggle, .floating-contact { display: inline-grid; }
+  .menu-toggle {
+    place-items: center;
+    color: var(--warm-white);
+    border-color: rgba(255,255,255,0.58);
+  }
+  .site-header.is-scrolled .menu-toggle,
+  .site-header.is-open .menu-toggle {
+    color: var(--charcoal);
+    border-color: var(--line);
+  }
   .section-head, .split, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+  .brand {
+    flex-basis: 188px;
+    width: 188px;
+  }
+  .brand-logo {
+    height: 46px;
+  }
   .section-head > div:first-child, .section-head > p { grid-column: auto; }
   .grid, .grid.four { grid-template-columns: repeat(2, 1fr); }
   .package-card.featured { transform: none; }
@@ -1514,6 +1535,14 @@ input:focus, textarea:focus, select:focus {
   .btn { font-size: 14px; }
   .nav-wrap { width: min(100% - 32px, 1240px); height: 76px; }
   .container, .hero-content, .mobile-nav { width: min(100% - 32px, 1240px); }
+  .brand {
+    flex-basis: 168px;
+    width: 168px;
+    height: 50px;
+  }
+  .brand-logo {
+    height: 40px;
+  }
   .brand-mark { width: 44px; height: 44px; }
   .brand span:last-child { font-size: 0.72rem; }
   .hero-content { margin: 0 auto; padding: 112px 0 64px; }
@@ -1527,6 +1556,9 @@ input:focus, textarea:focus, select:focus {
     min-height: 44px;
     padding: 11px 0;
     margin: 0;
+  }
+  .footer-brand img {
+    height: 54px;
   }
   .scroll-cue {
     bottom: 22px;

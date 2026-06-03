@@ -1062,6 +1062,7 @@ p.lead {
 .packages-showcase .section-actions {
   margin-top: auto;
   padding-top: 38px;
+  justify-content: center;
 }
 .packages-showcase .package-booking-btn {
   width: auto;

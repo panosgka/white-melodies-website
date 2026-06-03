@@ -1059,6 +1059,14 @@ p.lead {
 .package-note + .section-actions {
   margin-top: 44px;
 }
+.packages-showcase .section-actions {
+  margin-top: auto;
+  padding-top: 38px;
+}
+.packages-showcase .package-booking-btn {
+  width: auto;
+  justify-content: center;
+}
 
 .portfolio-card {
   min-height: 0;

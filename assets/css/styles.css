@@ -107,6 +107,10 @@ h2 {
 .hero-title-line {
   display: block;
 }
+.hero-subtitle-line {
+  font-size: 0.74em;
+  line-height: 1.12;
+}
 h2 + p,
 h3 + p {
   margin-top: 24px;

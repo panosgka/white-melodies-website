@@ -57,14 +57,52 @@ window.addEventListener("resize", () => {
 }, { passive: true });
 
 const form = document.querySelector("[data-contact-form]");
-form?.addEventListener("submit", (event) => {
+const formStatus = form?.querySelector("[data-form-status]");
+const submitButton = form?.querySelector('button[type="submit"]');
+
+function setFormStatus(message, state = "") {
+  if (!formStatus) return;
+  formStatus.textContent = message;
+  formStatus.dataset.state = state;
+}
+
+form?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const data = new FormData(form);
-  const subject = encodeURIComponent("Αίτημα προσφοράς White Melodies Events");
-  const body = encodeURIComponent(
-    `Όνομα: ${data.get("name") || ""}\nEmail: ${data.get("email") || ""}\nΤηλέφωνο: ${data.get("phone") || ""}\nΗμερομηνία: ${data.get("date") || ""}\nΤοποθεσία: ${data.get("location") || ""}\nΚαλεσμένοι: ${data.get("guests") || ""}\nΥπηρεσίες: ${data.get("services") || ""}\n\nΜήνυμα:\n${data.get("message") || ""}`
-  );
-  window.location.href = `mailto:WhiteMelodiesEvents@gmail.com?subject=${subject}&body=${body}`;
+  const accessKey = String(data.get("access_key") || "");
+
+  if (!accessKey || accessKey === "PASTE_WEB3FORMS_ACCESS_KEY_HERE") {
+    setFormStatus("Το Web3Forms access key δεν έχει προστεθεί ακόμα.", "error");
+    return;
+  }
+
+  setFormStatus("Αποστολή σε εξέλιξη...", "pending");
+  submitButton?.setAttribute("disabled", "true");
+
+  try {
+    const payload = JSON.stringify(Object.fromEntries(data));
+    const response = await fetch(form.action, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: payload
+    });
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Form submission failed");
+    }
+
+    form.reset();
+    setFormStatus("Το αίτημά σας στάλθηκε. Μεταφορά στη σελίδα επιβεβαίωσης...", "success");
+    window.location.href = "thank-you.html";
+  } catch (error) {
+    setFormStatus("Δεν έγινε η αποστολή. Δοκιμάστε ξανά ή στείλτε email στο info@whitemelodies.gr.", "error");
+  } finally {
+    submitButton?.removeAttribute("disabled");
+  }
 });
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

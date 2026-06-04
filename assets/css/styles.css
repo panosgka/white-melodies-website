@@ -1308,6 +1308,7 @@ p.lead {
   font-size: 0.9rem;
 }
 .form .full { grid-column: 1 / -1; }
+.is-hidden { display: none !important; }
 input, textarea, select {
   width: 100%;
   border: 1px solid var(--line);
@@ -1320,6 +1321,19 @@ textarea { min-height: 132px; resize: vertical; }
 input:focus, textarea:focus, select:focus {
   outline: 2px solid rgba(185,149,85,0.28);
   border-color: var(--soft-gold);
+}
+.form-status {
+  min-height: 1.4em;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.form-status[data-state="success"] { color: #2f6b45; }
+.form-status[data-state="error"] { color: #9f3434; }
+.form-status[data-state="pending"] { color: var(--charcoal); }
+button[disabled] {
+  cursor: wait;
+  opacity: 0.72;
 }
 
 .cta-band {

@@ -1492,6 +1492,12 @@ button[disabled] {
   font-size: 14px;
   text-align: center;
 }
+.motion-ready .footer-bottom,
+.footer-bottom.reveal {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
 .floating-contact {
   position: fixed;
   right: 16px;

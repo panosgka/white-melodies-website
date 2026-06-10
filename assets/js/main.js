@@ -126,7 +126,6 @@ function setupRevealMotion() {
     ".cta-band p",
     ".cta-band .section-actions",
     ".footer-grid > div",
-    ".footer-bottom",
     ".contact-card",
     ".form label",
     ".page-hero .eyebrow",

@@ -1449,12 +1449,12 @@ button[disabled] {
 .footer {
   background: var(--charcoal);
   color: rgba(255,252,245,0.8);
-  padding: 82px 0 34px;
+  padding: 104px 0 46px;
 }
 .footer-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.8fr 0.8fr;
-  gap: 52px;
+  gap: 72px;
 }
 .footer h3 {
   color: var(--warm-white);
@@ -1486,10 +1486,11 @@ button[disabled] {
 }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.12);
-  margin-top: 36px;
-  padding-top: 20px;
-  color: rgba(255,255,255,0.55);
+  margin-top: 64px;
+  padding-top: 24px;
+  color: rgba(255,255,255,0.72);
   font-size: 14px;
+  text-align: center;
 }
 .floating-contact {
   position: fixed;

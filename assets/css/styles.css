@@ -1668,12 +1668,36 @@ button[disabled] {
   }
   .brand-mark { width: 44px; height: 44px; }
   .brand span:last-child { font-size: 0.72rem; }
-  .hero-content { margin: 0 auto; padding: 112px 0 64px; }
+  .hero-content { margin: 0 auto; padding: 92px 0 48px; }
+  .hero h1 {
+    font-size: clamp(31px, 8.6vw, 36px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .hero-subtitle-line {
+    font-size: 0.62em;
+    line-height: 1.14;
+  }
+  .hero .eyebrow {
+    margin-bottom: 22px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+  }
   .hero p {
-    max-width: 34ch;
-    font-size: 16px;
+    max-width: 32ch;
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.48;
   }
   .hero-title-line { white-space: normal; }
+  .hero-actions {
+    gap: 14px;
+    margin-top: 22px;
+  }
+  .hero .btn {
+    min-height: 46px;
+    padding: 12px 18px;
+  }
   .hero-actions .btn, .section-actions .btn { width: 100%; }
   .footer a {
     min-height: 44px;
@@ -1692,23 +1716,22 @@ button[disabled] {
     min-height: 100svh;
   }
   .hero::before {
-    inset: 0;
+    inset: -10% 0;
     background:
       radial-gradient(circle at 24% 38%, rgba(185,151,91,0.14), transparent 42%),
-      linear-gradient(90deg, rgba(12,11,10,0.97) 0%, rgba(12,11,10,0.90) 58%, rgba(12,11,10,0.68) 100%),
+      linear-gradient(90deg, rgba(12,11,10,0.96) 0%, rgba(12,11,10,0.88) 58%, rgba(12,11,10,0.60) 100%),
       linear-gradient(270deg, rgba(12,11,10,0.26) 0%, transparent 44%),
-      linear-gradient(180deg, rgba(15,14,12,0.50) 0%, rgba(15,14,12,0.28) 32%, rgba(15,14,12,0.76) 100%),
-      var(--hero-image),
+      linear-gradient(180deg, rgba(15,14,12,0.56) 0%, rgba(15,14,12,0.18) 34%, rgba(15,14,12,0.72) 100%),
       var(--hero-image);
-    background-size: auto, auto, auto, auto, 100% auto, auto 100%;
+    background-size: auto, auto, auto, auto, cover;
     background-repeat: no-repeat;
-    background-position: center, center, center, center, center 92px, 62% center;
+    background-position: center, center, center, center, 58% center;
     animation: none;
     scale: 1;
-    translate: 0;
+    translate: 0 var(--hero-parallax-y);
   }
   .trust-row {
-    gap: 12px;
+    display: none;
   }
   .grid, .grid.four, .form { grid-template-columns: 1fr; }
   .portfolio-card { min-height: 340px; aspect-ratio: auto; }

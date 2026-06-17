@@ -1282,6 +1282,7 @@ p.lead {
 .page-hero {
   --hero-parallax-y: 0px;
   position: relative;
+  height: clamp(660px, 52.5vw, 786px);
   padding: 200px 0 132px;
   color: var(--warm-white);
   background: var(--charcoal);
@@ -1736,7 +1737,14 @@ button[disabled] {
   .grid, .grid.four, .form { grid-template-columns: 1fr; }
   .portfolio-card { min-height: 340px; aspect-ratio: auto; }
   .image-panel img { min-height: 340px; }
-  .page-hero { padding: 132px 0 58px; }
+  .page-hero {
+    height: auto;
+    min-height: 660px;
+    padding: 132px 0 58px;
+  }
+  .wedding-packages-hero::before {
+    background-position: center, center, center, 28% center;
+  }
   .section { padding: 82px 0; }
   .card-body, .portfolio-content, .package-card, .contact-card { padding: 24px; }
 }

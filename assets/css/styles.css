@@ -1491,7 +1491,28 @@ button[disabled] {
   padding-top: 24px;
   color: rgba(255,255,255,0.72);
   font-size: 14px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.designer-credit {
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.footer-bottom .designer-credit a {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: rgba(255,255,255,0.68);
+  font: inherit;
+  min-height: 0;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.footer-bottom .designer-credit a:hover {
+  color: rgba(255,252,245,0.9);
 }
 .motion-ready .footer-bottom,
 .footer-bottom.reveal {
@@ -1704,6 +1725,12 @@ button[disabled] {
     min-height: 44px;
     padding: 11px 0;
     margin: 0;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
   }
   .footer-brand img {
     height: 54px;
